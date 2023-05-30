@@ -1,0 +1,29 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "agent.proto";
+import "contract.proto";
+import "faction.proto";
+import "register_faction.proto";
+import "ship.proto";
+
+message RegisterRequest {
+    register.RegisterFaction faction = 1; // The faction you choose determines your headquarters.
+    string symbol = 2; // How other agents will see your ships and information.
+    string email = 3; // Your email address. This is used if you reserved your call sign between resets.
+}
+
+message RegisterResponse {
+    message Data {
+        Agent agent = 1;
+        Contract contract = 2;
+        Faction faction = 3;
+        Ship ship = 4;
+        string token = 5;
+    }
+    Data data = 1;
+}

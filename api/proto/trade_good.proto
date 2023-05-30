@@ -1,0 +1,14 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "trade_symbol.proto";
+
+message TradeGood {
+    trade.TradeSymbol symbol = 1;
+    string name = 2;
+    string description = 3;
+}

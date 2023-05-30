@@ -1,0 +1,254 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "agent.proto";
+import "chart.proto";
+import "contract.proto";
+import "cooldown.proto";
+import "extraction.proto";
+import "market_transaction.proto";
+import "meta.proto";
+import "scanned_ship.proto";
+import "scanned_system.proto";
+import "scanned_waypoint.proto";
+import "ship.proto";
+import "ship_cargo.proto";
+import "ship_fuel.proto";
+import "ship_nav.proto";
+import "ship_nav_flight_mode.proto";
+import "ship_type.proto";
+import "shipyard_transaction.proto";
+import "survey.proto";
+import "waypoint.proto";
+
+message CargoTransactionRequest {
+    string symbol = 1;
+    int32 units = 2;
+}
+
+message CargoTransactionResponse {
+    message Data {
+        Agent agent = 1;
+        ShipCargo cargo = 2;
+        MarketTransaction transaction = 3;
+    }
+    Data data = 1;
+}
+
+message CreateChartResponse {
+    message Data {
+        Chart chart = 1;
+        Waypoint waypoint = 2;
+    }
+    Data data = 1;
+}
+
+message CreateSurveyResponse {
+    message Data {
+        Cooldown cooldown = 1;
+        repeated Survey surveys = 2;
+    }
+    Data data = 1;
+}
+
+message DockShipResponse {
+    message Data {
+        ShipNav nav = 1;
+    }
+    Data data = 1;
+}
+
+message ExtractResourcesResponse {
+    message Data {
+        Cooldown cooldown = 1;
+        Extraction extraction = 2;
+        ShipCargo cargo = 3;
+    }
+    Data data = 1;
+}
+
+message GetShipResponse {
+    Ship data = 1;
+}
+
+message GetShipCargoResponse {
+    ShipCargo data = 1;
+}
+
+message GetShipCooldownResponse {
+    Cooldown data = 1;
+}
+
+message GetShipNavResponse {
+    ShipNav data = 1;
+}
+
+message JettisonCargoRequest {
+    string symbol = 1;
+    int32 units = 2;
+}
+
+message JettisonCargoResponse {
+    message Data {
+        ShipCargo cargo = 1;
+    }
+    Data data = 1;
+}
+
+message JumpShipRequest {
+    string system_symbol = 1;
+}
+
+message JumpShipResponse {
+    message Data {
+        Cooldown cooldown = 1;
+        ShipNav nav = 2;
+    }
+    Data data = 1;
+}
+
+message ListShipsResponse {
+    repeated Ship data = 1;
+    Meta meta = 2;
+}
+
+message NavigateShipRequest {
+    string waypoint_symbol = 1;
+}
+
+message NavigateShipResponse {
+    message Data {
+        ShipFuel fuel = 1; // Details of the ship's fuel tanks including how much fuel was consumed during the last transit or action.
+        ShipNav nav = 2; // The navigation information of the ship.
+    }
+    Data data = 1;
+}
+
+message NegotiateContractResponse {
+    message Data {
+        Contract contract = 1;
+    }
+    Data data = 1;
+}
+
+message OrbitShipResponse {
+    message Data {
+        ShipNav nav = 1;
+    }
+    Data data = 1;
+}
+
+message PatchShipNavRequest {
+    ShipNavFlightMode flight_mode = 1;
+}
+
+message PatchShipNavResponse {
+    ShipNav data = 1;
+}
+
+message PurchaseShipRequest {
+    ShipType ship_type = 1;
+    string waypoint_symbol = 2;
+}
+
+message PurchaseShipResponse {
+    message Data {
+        Agent agent = 1;
+        Ship ship = 2;
+        ShipyardTransaction transaction = 3;
+    }
+    Data data = 1;
+}
+
+message RefuelShipResponse {
+    message Data {
+        Agent agent = 1;
+        ShipFuel fuel = 2;
+        MarketTransaction transaction = 3;
+    }
+    Data data = 1;
+}
+
+message ScanShipsResponse {
+    message Data {
+        Cooldown cooldown = 1;
+        repeated ScannedShip ships = 2;
+    }
+    Data data = 1;
+}
+
+message ScanSystemsResponse {
+    message Data {
+        Cooldown cooldown = 1;
+        repeated ScannedSystem systems = 2;
+    }
+    Data data = 1;
+}
+
+message ScanWaypointsResponse {
+    message Data {
+        Cooldown cooldown = 1;
+        repeated ScannedWaypoint waypoints = 2;
+    }
+    Data data = 1;
+}
+
+enum ShipRefineProduce {
+    IRON = 0;
+    COPPER = 1;
+    SILVER = 2;
+    GOLD = 3;
+    ALUMINUM = 4;
+    PLATINUM = 5;
+    URANITE = 6;
+    MERITIUM = 7;
+    FUEL = 8;
+}
+
+message ShipRefineRequest {
+    ShipRefineProduce produce = 1;
+}
+
+message ShipRefineIngredient {
+    string tradeSymbol = 1;
+    int32 units = 2;
+}
+
+message ShipRefineResponse {
+    message Data {
+        ShipCargo cargo = 1;
+        Cooldown cooldown = 2;
+        repeated ShipRefineIngredient produced = 3;
+        repeated ShipRefineIngredient consumed = 4;
+    }
+    Data data = 1;
+}
+
+message TransferCargoRequest {
+    string trade_symbol = 1;
+    int32 units = 2;
+    string ship_symbol = 3;
+}
+
+message TransferCargoResponse {
+    message Data {
+        ShipCargo cargo = 1;
+    }
+    Data data = 1;
+}
+
+message WarpShipRequest {
+    string waypoint_symbol = 1;
+}
+
+message WarpShipResponse {
+    message Data {
+        ShipFuel fuel = 1;
+        ShipNav nav = 2;
+    }
+    Data data = 1;
+}

@@ -1,0 +1,25 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "ship_requirements.proto";
+
+enum ShipEngineSymbol {
+    ENGINE_IMPULSE_DRIVE_I = 0;
+    ENGINE_ION_DRIVE_I = 1;
+    ENGINE_ION_DRIVE_II = 2;
+    ENGINE_HYPER_DRIVE_I = 3;
+}
+
+// The engine determines how quickly a ship travels between waypoints.
+message ShipEngine {
+    ShipEngineSymbol symbol = 1;
+    string name = 2;
+    string description = 3;
+    int32 condition = 4; // Condition is a range of 0 to 100 where 0 is completely worn out and 100 is brand new. [0, 100]
+    int32 speed = 5; // [1, ∞)
+    ShipRequirements requirements = 6;
+}

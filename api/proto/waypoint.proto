@@ -1,0 +1,25 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "chart.proto";
+import "waypoint_faction.proto";
+import "waypoint_orbital.proto";
+import "waypoint_trait.proto";
+import "waypoint_type.proto";
+
+// A waypoint is a location that ships can travel to such as a Planet, Moon or Space Station.
+message Waypoint {
+    string symbol = 1;
+    wp.WaypointType type = 2; // The type of waypoint.
+    string system_symbol = 3;
+    int32 x = 4;
+    int32 y = 5;
+    repeated WaypointOrbital orbitals = 6;
+    WaypointFaction faction = 7;
+    repeated WaypointTrait traits = 8;
+    Chart chart = 9;
+}

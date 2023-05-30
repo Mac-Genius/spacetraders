@@ -1,0 +1,21 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+enum ShipCrewRotation {
+    STRICT = 0;
+    RELAXED = 1;
+}
+
+// The ship's crew service and maintain the ship's systems and equipment.
+message ShipCrew {
+    int32 current = 1; // The current number of crew members on the ship.
+    int32 required = 2; // The minimum number of crew members required to maintain the ship.
+    int32 capacity = 3; // The maximum number of crew members the ship can support.
+    ShipCrewRotation rotation = 4; // The rotation of crew shifts. A stricter shift improves the ship's performance. A more relaxed shift improves the crew's morale.
+    int32 morale = 5; // A rough measure of the crew's morale. A higher morale means the crew is happier and more productive. A lower morale means the ship is more prone to accidents. [0, 100]
+    int32 wages = 6; // The amount of credits per crew member paid per hour. Wages are paid when a ship docks at a civilized waypoint. [0, ∞)
+}

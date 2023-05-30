@@ -1,0 +1,19 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "google/protobuf/timestamp.proto";
+import "survey_deposit.proto";
+import "survey_size.proto";
+
+// A resource survey of a waypoint, detailing a specific extraction location and the types of resources that can be found there.
+message Survey {
+    string signature = 1; // A unique signature for the location of this survey. This signature is verified when attempting an extraction using this survey.
+    string symbol = 2; // The symbol of the waypoint that this survey is for.
+    repeated SurveyDeposit deposits = 3; // A list of deposits that can be found at this location.
+    google.protobuf.Timestamp expiration = 4; // The date and time when the survey expires. After this date and time, the survey will no longer be available for extraction.
+    survey.SurveySize size = 5; // The size of the deposit. This value indicates how much can be extracted from the survey before it is exhausted.
+}

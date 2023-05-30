@@ -1,0 +1,16 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+message Error {
+    string message = 1;
+    int32 code = 2;
+}
+
+// Returned if the user messes up.
+message ErrorResponse {
+    Error error = 1;
+}

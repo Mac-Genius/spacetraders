@@ -1,0 +1,21 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "google/protobuf/timestamp.proto";
+import "contract_terms.proto";
+import "contract_type.proto";
+
+message Contract {
+    string id = 1;
+    string faction_symbol = 2; // The symbol of the faction that this contract is for.
+    contract.ContractType type = 3;
+    ContractTerms terms = 4;
+    bool accepted = 5; // Whether the contract has been accepted by the agent.
+    bool fulfilled = 6; // Whether the contract has been fulfilled.
+    google.protobuf.Timestamp expiration = 7; // Deprecated in favor of deadline_to_accept.
+    google.protobuf.Timestamp deadline_to_accept = 8; // The time at which the contract is no longer available to be accepted.
+}

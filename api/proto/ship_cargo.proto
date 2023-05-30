@@ -1,0 +1,14 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "ship_cargo_item.proto";
+
+message ShipCargo {
+    int32 capacity = 1; // The max number of items that can be stored in the cargo hold.
+    int32 units = 2; // The number of items currently stored in the cargo hold.
+    repeated ShipCargoItem inventory = 3; // The items currently in the cargo hold.
+}

@@ -1,0 +1,24 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "google/protobuf/timestamp.proto";
+
+enum MarketTransactionType {
+    PURCHASE = 0;
+    SELL = 1;
+}
+
+message MarketTransaction {
+    string waypoint_symbol = 1; // The symbol of the waypoint where the transaction took place.
+    string ship_symbol = 2; // The symbol of the ship that made the transaction.
+    string trade_symbol = 3; // The symbol of the trade good.
+    MarketTransactionType type = 4; // The type of transaction.
+    int32 units = 5; // The number of units of the transaction.
+    int32 price_per_unit = 6; // The price per unit of the transaction.
+    int32 total_price = 7; // The total price of the transaction.
+    google.protobuf.Timestamp timestamp = 8; // The timestamp of the transaction.
+}

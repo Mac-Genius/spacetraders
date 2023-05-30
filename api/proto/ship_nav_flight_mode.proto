@@ -1,0 +1,13 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+enum ShipNavFlightMode {
+    DRIFT = 0;
+    STEALTH = 1;
+    CRUISE = 2;
+    BURN = 3;
+}

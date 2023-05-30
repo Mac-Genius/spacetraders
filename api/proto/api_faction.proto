@@ -1,0 +1,18 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "faction.proto";
+import "meta.proto";
+
+message GetFactionResponse {
+    Faction data = 1;
+}
+
+message ListFactionsResponse {
+    repeated Faction data = 1;
+    Meta meta = 2;
+}

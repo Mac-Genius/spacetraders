@@ -1,0 +1,26 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "ship_requirements.proto";
+
+enum ShipReactorSymbol {
+    REACTOR_SOLAR_I = 0;
+    REACTOR_FUSION_I = 1;
+    REACTOR_FISSION_I = 2;
+    REACTOR_CHEMICAL_I = 3;
+    REACTOR_ANTIMATTER_I = 4;
+}
+
+// The reactor of the ship. The reactor is responsible for powering the ship's systems and weapons.
+message ShipReactor {
+    ShipReactorSymbol symbol = 1;
+    string name = 2;
+    string description = 3;
+    int32 condition = 4; // Condition is a range of 0 to 100 where 0 is completely worn out and 100 is brand new.
+    int32 power_output = 5;
+    ShipRequirements requirements = 6;
+}

@@ -1,0 +1,23 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+enum ShipRole {
+    FABRICATOR = 0;
+    HARVESTER = 1;
+    HAULER = 2;
+    INTERCEPTOR = 3;
+    EXCAVATOR = 4;
+    TRANSPORT = 5;
+    REPAIR = 6;
+    SURVEYOR = 7;
+    COMMAND = 8;
+    CARRIER = 9;
+    PATROL = 10;
+    SATELLITE = 11;
+    EXPLORER = 12;
+    REFINERY = 13;
+}

@@ -1,0 +1,74 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+enum FactionTraitSymbol {
+    BUREAUCRATIC = 0;
+    SECRETIVE = 1;
+    CAPITALISTIC = 2;
+    INDUSTRIOUS = 3;
+    PEACEFUL = 4;
+    DISTRUSTFUL = 5;
+    WELCOMING = 6;
+    SMUGGLERS = 7;
+    SCAVENGERS = 8;
+    REBELLIOUS = 9;
+    EXILES = 10;
+    PIRATES = 11;
+    RAIDERS = 12;
+    CLAN = 13;
+    GUILD = 14;
+    DOMINION = 15;
+    FRINGE = 16;
+    FORSAKEN = 17;
+    ISOLATED = 18;
+    LOCALIZED = 19;
+    ESTABLISHED = 20;
+    NOTABLE = 21;
+    DOMINANT = 22;
+    INESCAPABLE = 23;
+    INNOVATIVE = 24;
+    BOLD = 25;
+    VISIONARY = 26;
+    CURIOUS = 27;
+    DARING = 28;
+    EXPLORATORY = 29;
+    RESOURCEFUL = 30;
+    FLEXIBLE = 31;
+    COOPERATIVE = 32;
+    UNITED = 33;
+    STRATEGIC = 34;
+    INTELLIGENT = 35;
+    RESEARCH_FOCUSED = 36;
+    COLLABORATIVE = 37;
+    PROGRESSIVE = 38;
+    MILITARISTIC = 39;
+    TECHNOLOGICALLY_ADVANCED = 40;
+    AGGRESSIVE = 41;
+    IMPERIALISTIC = 42;
+    TREASURE_HUNTERS = 43;
+    DEXTEROUS = 44;
+    UNPREDICTABLE = 45;
+    BRUTAL = 46;
+    FLEETING = 47;
+    ADAPTABLE = 48;
+    SELF_SUFFICIENT = 49;
+    DEFENSIVE = 50;
+    PROUD = 51;
+    DIVERSE = 52;
+    INDEPENDENT = 53;
+    SELF_INTERESTED = 54;
+    FRAGMENTED = 55;
+    COMMERCIAL = 56;
+    FREE_MARKETS = 57;
+    ENTREPRENEURIAL = 58;
+}
+
+message FactionTrait {
+    FactionTraitSymbol symbol = 1; // The unique identifier of the trait.
+    string name = 2; // The name of the trait.
+    string description = 3; // A description of the trait.
+}

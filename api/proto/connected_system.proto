@@ -1,0 +1,18 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "system_type.proto";
+
+message ConnectedSystem {
+    string symbol = 1;
+    string sector_symbol = 2;
+    sys.SystemType type = 3;
+    string faction_symbol = 4;
+    int32 x = 5;
+    int32 y = 6;
+    int32 distance = 7;
+}

@@ -1,0 +1,19 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+enum ShipType {
+    SHIP_PROBE = 0;
+    SHIP_MINING_DRONE = 1;
+    SHIP_INTERCEPTOR = 2;
+    SHIP_LIGHT_HAULER = 3;
+    SHIP_COMMAND_FRIGATE = 4;
+    SHIP_EXPLORER = 5;
+    SHIP_HEAVY_FREIGHTER = 6;
+    SHIP_LIGHT_SHUTTLE = 7;
+    SHIP_ORE_HOUND = 8;
+    SHIP_REFINING_FREIGHTER = 9;
+}

@@ -1,0 +1,25 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "ship_engine.proto";
+import "ship_frame.proto";
+import "ship_module.proto";
+import "ship_mount.proto";
+import "ship_reactor.proto";
+import "ship_type.proto";
+
+message ShipyardShip {
+    ShipType type = 1;
+    string name = 2;
+    string description = 3;
+    int32 purchase_price = 4;
+    ShipFrame frame = 5;
+    ShipReactor reactor = 6;
+    ShipEngine engine = 7;
+    repeated ShipModule modules = 8;
+    repeated ShipMount mounts = 9;
+}

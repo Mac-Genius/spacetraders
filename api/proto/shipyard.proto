@@ -1,0 +1,21 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "ship_type.proto";
+import "shipyard_ship.proto";
+import "shipyard_transaction.proto";
+
+message ShipyardShipType {
+    ShipType type = 1;
+}
+
+message Shipyard {
+    string symbol = 1;
+    repeated ShipyardShipType ship_types = 2;
+    repeated ShipyardTransaction transactions = 3;
+    repeated ShipyardShip ships = 4;
+}

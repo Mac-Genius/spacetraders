@@ -1,0 +1,34 @@
+{
+    "data": {
+        "cooldown": {
+            "shipSymbol": "string",
+            "totalSeconds": 0,
+            "remainingSeconds": 0,
+            "expiration": "2019-08-24T14:15:22Z"
+        },
+        "nav": {
+            "systemSymbol": "string",
+            "waypointSymbol": "string",
+            "route": {
+                "destination": {
+                    "symbol": "string",
+                    "type": "PLANET",
+                    "systemSymbol": "string",
+                    "x": 0,
+                    "y": 0
+                },
+                "departure": {
+                    "symbol": "string",
+                    "type": "PLANET",
+                    "systemSymbol": "string",
+                    "x": 0,
+                    "y": 0
+                },
+                "departureTime": "2019-08-24T14:15:22Z",
+                "arrival": "2019-08-24T14:15:22Z"
+            },
+            "status": "IN_TRANSIT",
+            "flightMode": "CRUISE"
+        }
+    }
+}

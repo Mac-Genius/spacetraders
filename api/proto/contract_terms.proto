@@ -1,0 +1,16 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "google/protobuf/timestamp.proto";
+import "contract_payment.proto";
+import "contract_deliver_good.proto";
+
+message ContractTerms {
+    google.protobuf.Timestamp deadline = 1; // The deadline for the contract.
+    ContractPayment payment = 2;
+    repeated ContractDeliverGood deliver = 3;
+}

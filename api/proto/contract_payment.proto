@@ -1,0 +1,11 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+message ContractPayment {
+    int32 on_accepted = 1; // The amount of credits received up front for accepting the contract.
+    int32 on_fulfilled = 2; // The amount of credits received when the c ontract is fulfilled.
+}

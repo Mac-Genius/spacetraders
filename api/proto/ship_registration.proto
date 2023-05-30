@@ -1,0 +1,15 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "ship_role.proto";
+
+// The public registration information of the ship.
+message ShipRegistration {
+    string name = 1; // The agent's registered name of the ship.
+    string faction_symbol = 2; // The symbol of the faction the ship is registered with.
+    ShipRole role = 3; // The registered role of the ship.
+}

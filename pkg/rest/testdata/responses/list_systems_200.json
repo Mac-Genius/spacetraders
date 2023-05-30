@@ -1,0 +1,29 @@
+{
+    "data": [
+        {
+            "symbol": "string",
+            "sectorSymbol": "string",
+            "type": "NEUTRON_STAR",
+            "x": 0,
+            "y": 0,
+            "waypoints": [
+                {
+                    "symbol": "string",
+                    "type": "PLANET",
+                    "x": 0,
+                    "y": 0
+                }
+            ],
+            "factions": [
+                {
+                    "symbol": "string"
+                }
+            ]
+        }
+    ],
+    "meta": {
+        "total": 0,
+        "page": 0,
+        "limit": 0
+    }
+}

@@ -1,0 +1,17 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "faction_trait.proto";
+
+message Faction {
+    string symbol = 1;
+    string name = 2;
+    string description = 3;
+    string headquarters = 4;
+    repeated FactionTrait traits = 5;
+    bool is_recruiting = 6; // Whether or not the faction is currently recruiting new agents.
+}

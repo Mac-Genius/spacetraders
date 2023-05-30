@@ -1,0 +1,24 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "ship_nav.proto";
+import "ship_registration.proto";
+
+message ScannedShipPart {
+    string symbol = 1;
+}
+
+// The ship that was scanned. Details include information about the ship that could be detected by the scanner.
+message ScannedShip {
+    string symbol = 1; // The globally unique identifier of the ship.
+    ShipRegistration registration = 2; // The public registration information of the ship.
+    ShipNav nav = 3; // The navigation information of the ship.
+    ScannedShipPart frame = 4; // The frame of the ship.
+    ScannedShipPart reactor = 5; // The reactor of the ship.
+    ScannedShipPart engine = 6; // The engine of the ship.
+    repeated ScannedShipPart mounts = 7;
+}

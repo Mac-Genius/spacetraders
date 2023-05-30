@@ -1,0 +1,14 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api.register;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+enum RegisterFaction {
+    COSMIC = 0;
+    VOID = 1;
+    GALACTIC = 2;
+    QUANTUM = 3;
+    DOMINION = 4;
+}

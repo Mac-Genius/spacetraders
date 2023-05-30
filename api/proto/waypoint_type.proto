@@ -1,0 +1,18 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api.wp;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+enum WaypointType {
+    PLANET = 0;
+    GAS_GIANT = 1;
+    MOON = 2;
+    ORBITAL_STATION = 3;
+    JUMP_GATE = 4;
+    ASTEROID_FIELD = 5;
+    NEBULA = 6;
+    DEBRIS_FIELD = 7;
+    GRAVITY_WELL = 8;
+}

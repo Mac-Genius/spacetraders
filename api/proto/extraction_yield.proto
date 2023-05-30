@@ -1,0 +1,11 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+message ExtractionYield {
+    string symbol = 1;
+    int32 units = 2; // The number of units extracted that were placed into the ship's cargo hold.
+}

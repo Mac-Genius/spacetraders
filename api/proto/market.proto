@@ -1,0 +1,19 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "trade_good.proto";
+import "market_trade_good.proto";
+import "market_transaction.proto";
+
+message Market {
+    string symbol = 1; // The symbol of the market. The symbol is the same as the waypoint where the market is located.
+    repeated TradeGood exports = 2; // The list of goods that are exported from this market.
+    repeated TradeGood imports = 3; // The list of goods that are sought as imports in this market.
+    repeated TradeGood exchange = 4; // The list of goods that are bought and sold between agents at this market.
+    repeated MarketTransaction transactions = 5; // The list of recent transactions at this market. Visible only when a ship is present at the market.
+    repeated MarketTradeGood trade_goods = 6; // The list of goods that are traded at this market. Visible only when a ship is present at the market.
+}

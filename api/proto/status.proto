@@ -1,0 +1,57 @@
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+// GlobalStats contains statistics about the SpaceTraders universe.
+message GlobalStats {
+    int32 agents = 1;
+    int32 ships = 2;
+    int32 systems = 3;
+    int32 waypoints = 4;
+}
+
+// LeaderboardCredits contains credit info from the leaderboard.
+message LeaderboardCredits {
+    string agent_symbol = 1;
+    int32 credits = 2;
+}
+
+// LeaderboardCharts contains credit info from the leaderboard.
+message LeaderboardCharts {
+    string agent_symbol = 1;
+    int32 chart_count = 2;
+}
+
+// Leaderboard is the leaderboard for the SpaceTraders universe.
+message Leaderboard {
+    repeated LeaderboardCredits most_credits = 1;
+    repeated LeaderboardCharts most_submitted_charts = 2;
+}
+
+message ServerResets {
+    string next = 1;
+    string frequency = 2;
+}
+
+message Announcment {
+    string title = 1;
+    string body = 2;
+}
+
+message Link {
+    string name = 1;
+    string url = 2;
+}
+
+message StatusResponse {
+    string status = 1;
+    string version = 2;
+    string resetDate = 3;
+    string description = 4;
+    GlobalStats stats = 5;
+    Leaderboard leaderboards = 6;
+    ServerResets server_resets = 7;
+    repeated Announcment announcements = 8;
+    repeated Link links = 9;
+}

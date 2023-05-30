@@ -1,0 +1,14 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+message Agent {
+    string account_id = 1;
+    string symbol = 2;
+    string headquarters = 3; // The headquarters of the agent.
+    int32 credits = 4; // The number of credits the agent has available. Credits can be negative if funds have been overdrawn.
+    string starting_faction = 5; // The faction the agent started with.
+}

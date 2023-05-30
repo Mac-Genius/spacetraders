@@ -1,0 +1,29 @@
+{
+    "data": {
+        "cooldown": {
+            "shipSymbol": "string",
+            "totalSeconds": 0,
+            "remainingSeconds": 0,
+            "expiration": "2019-08-24T14:15:22Z"
+        },
+        "extraction": {
+            "shipSymbol": "string",
+            "yield": {
+                "symbol": "string",
+                "units": 0
+            }
+        },
+        "cargo": {
+            "capacity": 0,
+            "units": 0,
+            "inventory": [
+                {
+                    "symbol": "string",
+                    "name": "string",
+                    "description": "string",
+                    "units": 1
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,43 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "jump_gate.proto";
+import "market.proto";
+import "meta.proto";
+import "shipyard.proto";
+import "system.proto";
+import "waypoint.proto";
+
+message GetJumpGateResponse {
+    JumpGate data = 1;
+}
+
+message GetMarketResponse {
+    Market data = 1;
+}
+
+message GetShipyardResponse {
+    Shipyard data = 1;
+}
+
+message GetSystemResponse {
+    System data = 1;
+}
+
+message GetWaypointResponse {
+    Waypoint data = 1;
+}
+
+message ListSystemsResponse {
+    repeated System data = 1;
+    Meta meta = 2;
+}
+
+message ListWaypointsResponse {
+    repeated Waypoint data = 1;
+    Meta meta = 2;
+}

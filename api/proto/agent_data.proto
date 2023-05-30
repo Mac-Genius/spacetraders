@@ -1,0 +1,12 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "agent.proto";
+
+message AgentData {
+    Agent data = 1;
+}

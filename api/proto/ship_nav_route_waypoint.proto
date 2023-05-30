@@ -1,0 +1,17 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "waypoint_type.proto";
+
+// The destination or departure of a ships nav route.
+message ShipNavRouteWaypoint {
+    string symbol = 1;
+    wp.WaypointType type = 2; // The type of waypoint.
+    string system_symbol = 3;
+    int32 x = 4;
+    int32 y = 5;
+}

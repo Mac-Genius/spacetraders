@@ -1,0 +1,13 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+// The requirements for installation on a ship.
+message ShipRequirements {
+    int32 power = 1; // The amount of power required from the reactor.
+    int32 crew = 2; // The number of crew required for operation.
+    int32 slots = 3; // The number of module slots required for installation.
+}

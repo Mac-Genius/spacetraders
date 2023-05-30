@@ -1,0 +1,16 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "google/protobuf/timestamp.proto";
+
+message ShipyardTransaction {
+    string waypoint_symbol = 1; // The symbol of the waypoint where the transaction took place.
+    string ship_symbol = 2; // The symbol of the ship that was purchased.
+    int32 price = 3; // The price of the transaction.
+    string agent_symbol = 4; // The symbol of the agent that made the transaction.
+    google.protobuf.Timestamp timestamp = 5; // The timestamp of the transaction.
+}

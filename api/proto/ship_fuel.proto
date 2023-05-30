@@ -1,0 +1,20 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "google/protobuf/timestamp.proto";
+
+message ShipFuelConsumed {
+    int32 amount = 1; // The amount of fuel consumed by the most recent transit or action.
+    google.protobuf.Timestamp timestamp = 2; // The time at which the fuel was consumed.
+}
+
+// Details of the ship's fuel tanks including how much fuel was consumed during the last transit or action.
+message ShipFuel {
+    int32 current = 1; // The current amount of fuel in the ship's tanks.
+    int32 capacity = 2; // The maximum amount of fuel the ship's tanks can hold.
+    ShipFuelConsumed consumed = 3;
+}

@@ -1,0 +1,6 @@
+{
+    "error": {
+        "message": "Failed to parse token. Token is missing or empty.",
+        "code": 4100
+    }
+}

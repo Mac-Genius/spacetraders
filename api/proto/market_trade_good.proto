@@ -1,0 +1,21 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+enum MarketTradeGoodSupply {
+    SCARCE = 0;
+    LIMITED = 1;
+    MODERATE = 2;
+    ABUNDANT = 3;
+}
+
+message MarketTradeGood {
+    string symbol = 1; // The symbol of the trade good.
+    int32 trade_volume = 2; // The typical volume flowing through the market for this type of good. The larger the trade volume, the more stable prices will be.
+    MarketTradeGoodSupply supply = 3; // A rough estimate of the total supply of this good in the marketplace.
+    int32 purchase_price = 4; // The price at which this good can be purchased from the market.
+    int32 sell_price = 5; // The price at which this good can be sold to the market.
+}

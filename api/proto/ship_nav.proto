@@ -1,0 +1,24 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "ship_nav_flight_mode.proto";
+import "ship_nav_route.proto";
+
+enum ShipNavStatus {
+    IN_TRANSIT = 0;
+    IN_ORBIT = 1;
+    DOCKED = 2;
+}
+
+// The navigation information of the ship.
+message ShipNav {
+    string system_symbol = 1; // The system symbol of the ship's current location.
+    string waypoint_symbol = 2; // The waypoint symbol of the ship's current location, or if the ship is in-transit, the waypoint symbol of the ship's destination.
+    ShipNavRoute route = 3; // The routing information for the ship's most recent transit or current location.
+    ShipNavStatus status = 4; // The current status of the ship.
+    ShipNavFlightMode flight_mode = 5; // The ship's set speed when traveling between waypoints or systems.
+}

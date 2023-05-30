@@ -1,0 +1,53 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "ship_requirements.proto";
+
+enum ShipMountSymbol {
+    MOUNT_GAS_SIPHON_I = 0;
+    MOUNT_GAS_SIPHON_II = 1;
+    MOUNT_GAS_SIPHON_III = 2;
+    MOUNT_SURVEYOR_I = 3;
+    MOUNT_SURVEYOR_II = 4;
+    MOUNT_SURVEYOR_III = 5;
+    MOUNT_SENSOR_ARRAY_I = 6;
+    MOUNT_SENSOR_ARRAY_II = 7;
+    MOUNT_SENSOR_ARRAY_III = 8;
+    MOUNT_MINING_LASER_I = 9;
+    MOUNT_MINING_LASER_II = 10;
+    MOUNT_MINING_LASER_III = 11;
+    MOUNT_LASER_CANNON_I = 12;
+    MOUNT_MISSILE_LAUNCHER_I = 13;
+    MOUNT_TURRET_I = 14;
+}
+
+enum ShipMountDeposit {
+    QUARTZ_SAND = 0;
+    SILICON_CRYSTALS = 1;
+    PRECIOUS_STONES = 2;
+    ICE_WATER = 3;
+    AMMONIA_ICE = 4;
+    IRON_ORE = 5;
+    COPPER_ORE = 6;
+    SILVER_ORE = 7;
+    ALUMINUM_ORE = 8;
+    GOLD_ORE = 9;
+    PLATINUM_ORE = 10;
+    DIAMOND = 11;
+    SURANITE_ORE = 12;
+    MERITIUM_ORE = 13;
+}
+
+// A mount is installed on the exterier of a ship.
+message ShipMount {
+    ShipMountSymbol symbol = 1;
+    string name = 2;
+    string description = 3;
+    int32 strength = 4;
+    repeated ShipMountDeposit deposits = 5;
+    ShipRequirements requirements = 6;
+}

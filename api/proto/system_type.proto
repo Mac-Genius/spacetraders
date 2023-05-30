@@ -1,0 +1,19 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api.sys;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+enum SystemType {
+    NEUTRON_STAR = 0;
+    RED_STAR = 1;
+    ORANGE_STAR = 2;
+    BLUE_STAR = 3;
+    YOUNG_STAR = 4;
+    WHITE_DWARF = 5;
+    BLACK_HOLE = 6;
+    HYPERGIANT = 7;
+    NEBULA = 8;
+    UNSTABLE = 9;
+}

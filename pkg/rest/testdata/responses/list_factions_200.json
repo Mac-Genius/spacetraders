@@ -1,0 +1,23 @@
+{
+    "data": [
+        {
+            "symbol": "string",
+            "name": "string",
+            "description": "string",
+            "headquarters": "string",
+            "traits": [
+                {
+                    "symbol": "BUREAUCRATIC",
+                    "name": "string",
+                    "description": "string"
+                }
+            ],
+            "isRecruiting": true
+        }
+    ],
+    "meta": {
+        "total": 0,
+        "page": 0,
+        "limit": 0
+    }
+}

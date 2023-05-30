@@ -1,0 +1,40 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "ship_requirements.proto";
+
+enum ShipFrameSymbol {
+    FRAME_PROBE = 0;
+    FRAME_DRONE = 1;
+    FRAME_INTERCEPTOR = 2;
+    FRAME_RACER = 3;
+    FRAME_FIGHTER = 4;
+    FRAME_FRIGATE = 5;
+    FRAME_SHUTTLE = 6;
+    FRAME_EXPLORER = 7;
+    FRAME_MINER = 8;
+    FRAME_LIGHT_FREIGHTER = 9;
+    FRAME_HEAVY_FREIGHTER = 10;
+    FRAME_TRANSPORT = 11;
+    FRAME_DESTROYER = 12;
+    FRAME_CRUISER = 13;
+    FRAME_CARRIER = 14;
+}
+
+// The frame of the ship. The frame determines the number of modules and mounting
+// points of the ship, as well as base fuel capacity. As the condition of the
+// frame takes more wear, the ship will become more sluggish and less maneuverable.
+message ShipFrame {
+    ShipFrameSymbol symbol = 1;
+    string name = 2;
+    string description = 3;
+    int32 condition = 4; // Condition is a range of 0 to 100 where 0 is completely worn out and 100 is brand new.
+    int32 module_slots = 5;
+    int32 mounting_points = 6;
+    int32 fuel_capacity = 7;
+    ShipRequirements requirements = 8;
+}

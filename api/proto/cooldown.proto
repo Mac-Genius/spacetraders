@@ -1,0 +1,15 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "google/protobuf/timestamp.proto";
+
+message Cooldown {
+    string ship_symbol = 1; // The symbol of the ship that is on cooldown.
+    int32 total_seconds = 2; // The total duration of the cooldown in seconds.
+    int32 remaining_seconds = 3; // The remaining duration of the cooldown in seconds.
+    google.protobuf.Timestamp expiration = 4; // The date and time when the cooldown expires in ISO 8601 format.
+}

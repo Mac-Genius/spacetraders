@@ -1,0 +1,12 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api.survey;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+enum SurveySize {
+    SMALL = 0;
+    MODERATE = 1;
+    LARGE = 2;
+}

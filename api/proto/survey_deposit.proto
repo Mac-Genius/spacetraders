@@ -1,0 +1,11 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+// A surveyed deposit of a mineral or resource available for extraction.
+message SurveyDeposit {
+    string symbol = 1; // The symbol of the deposit.
+}

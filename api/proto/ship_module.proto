@@ -1,0 +1,38 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "ship_requirements.proto";
+
+enum ShipModuleSymbol {
+    MODULE_MINERAL_PROCESSOR_I = 0;
+    MODULE_CARGO_HOLD_I = 1;
+    MODULE_CREW_QUARTERS_I = 2;
+    MODULE_ENVOY_QUARTERS_I = 3;
+    MODULE_PASSENGER_CABIN_I = 4;
+    MODULE_MICRO_REFINERY_I = 5;
+    MODULE_ORE_REFINERY_I = 6;
+    MODULE_FUEL_REFINERY_I = 7;
+    MODULE_SCIENCE_LAB_I = 8;
+    MODULE_JUMP_DRIVE_I = 9;
+    MODULE_JUMP_DRIVE_II = 10;
+    MODULE_JUMP_DRIVE_III = 11;
+    MODULE_WARP_DRIVE_I = 12;
+    MODULE_WARP_DRIVE_II = 13;
+    MODULE_WARP_DRIVE_III = 14;
+    MODULE_SHIELD_GENERATOR_I = 15;
+    MODULE_SHIELD_GENERATOR_II = 16;
+}
+
+// A module can be installed in a ship and provides a set of capabilities such as storage space or quarters for crew. Module installations are permanent.
+message ShipModule {
+    ShipModuleSymbol symbol = 1;
+    int32 capacity = 2;
+    int32 range = 3;
+    string name = 4;
+    string description = 5;
+    ShipRequirements requirements = 6; // The requirements for installation on a ship
+}

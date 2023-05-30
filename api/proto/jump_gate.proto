@@ -1,0 +1,14 @@
+// SpaceTraders v2.
+
+syntax = "proto3";
+package macgenius.spacetraders.api;
+
+option go_package = "github.com/mac-genius/spacetraders/api";
+
+import "connected_system.proto";
+
+message JumpGate {
+    int32 jump_range = 1; // The maximum jump range of the gate.
+    string faction_symbol = 2; // The symbol of the faction that owns the gate.
+    repeated ConnectedSystem connected_systems = 3; // The systems within range of the gate that have a corresponding gate.
+}
